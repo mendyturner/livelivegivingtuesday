@@ -1,370 +1,1026 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join liveLIVE Foundation's Giving Tuesday Campaign to help 100 single-parent families in need. Donate now and make an impact within 72-96 hours.">
-    <title>Giving Tuesday 2025 - liveLIVE Foundation | Help Single-Parent Families</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <title>Giving Tuesday | liveLIVE Foundation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Help liveLIVE Foundation meet the immediate needs of single-parent families between November 23 and Giving Tuesday, December 2. 98% of every gift goes directly to families within 72–96 hours."
+  />
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
+  <style>
+    :root {
+      --red: #e3222a;
+      --dark-red: #b0171e;
+      --black: #111111;
+      --white: #ffffff;
+      --cream: #fdf7f3;
+      --aqua: #23b7d9;
+      --gold: #d9a441;
+      --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.12);
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: radial-gradient(circle at top, #fff8f3 0, #f5f5f5 45%, #ececec 100%);
+      color: var(--black);
+    }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        .header-logo {
-            height: 58px;
-            width: auto;
-            display: block;
-        }
-        .logo-link {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-        .contact-info {
-            font-size: 14px;
-            opacity: 0.95;
-        }
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255,255,255,0.5);
-        }
+    /* NAV / HEADER */
 
-        /* Colorful holiday divider! */
-        .holiday-divider {
-            border: 0;
-            height: 8px;
-            margin: 60px auto 60px auto;
-            width: 140px;
-            border-radius: 30px;
-            background: linear-gradient(
-                90deg, 
-                #bc4749 0%,      /* Holiday red */
-                #ffcb05 18%,     /* Gold */
-                #386641 40%,     /* Evergreen */
-                #00b4d8 60%,     /* Blue accent */
-                #e63946 76%,     /* Bright Red */
-                #6a994e 85%,     /* Deep Green */
-                #ffe066 100%     /* Light Gold */
-            );
-            box-shadow: 0 2px 8px 1px rgba(60,60,60,0.12);
-            opacity: 0.85;
-            position: relative;
-        }
-        .holiday-divider::before, .holiday-divider::after {
-            content:"";
-            display:block;
-            position:absolute;
-            top:50%;
-            width:22px;
-            height:20px;
-            margin-top:-10px;
-            background-size: contain;
-            background-repeat:no-repeat;
-            opacity:0.55;
-        }
-        .holiday-divider::before {
-            left: -36px;
-            background-image: url('data:image/svg+xml,<svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><text x="1" y="16" font-family="Arial" font-size="20">✨</text></svg>');
-        }
-        .holiday-divider::after {
-            right: -36px;
-            background-image: url('data:image/svg+xml,<svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><text x="1" y="16" font-family="Arial" font-size="20">🎁</text></svg>');
-        }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
 
-        /* Festive hero for holiday Giving Tuesday */
-        .holiday-theme {
-            background: linear-gradient(135deg, #bc4749 0%, #386641 90%, #f5eecb 100%);
-            color: #fff6f7;
-            position: relative;
-        }
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
 
-        .holiday-effects {
-            pointer-events: none;
-            position: absolute;
-            inset: 0;
-            background: repeating-linear-gradient(
-                120deg,
-                rgba(255,255,255,0.06) 0 2px,
-                transparent 2px 8px
-            );
-            opacity: 0.42;
-            z-index: 0;
-        }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
 
-        .hero .holiday-emoji {
-            font-size: 40px;
-            position: relative;
-            top: 4px;
-        }
+    .nav-logo {
+      width: 72px;
+      height: auto;
+    }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
+    .nav-title {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
 
-        .campaign-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .nav-sub {
+      font-size: 0.8rem;
+      color: #555;
+    }
 
-        h1 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
 
-        .hero-subtitle {
-            font-size: 22px;
-            margin-bottom: 30px;
-            font-weight: 300;
-            opacity: 0.95;
-        }
+    .nav-dates {
+      font-size: 0.85rem;
+      color: #444;
+    }
 
-        .campaign-dates {
-            font-size: 18px;
-            margin-bottom: 40px;
-            font-weight: 500;
-            background: rgba(255,255,255,0.15);
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 30px;
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.08s ease,
+        color 0.08s ease;
+      box-shadow: var(--shadow-soft);
+    }
 
-        /* Rest of your CSS unchanged... (keep as is) */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--red), var(--dark-red));
+      color: var(--white);
+    }
 
-        /* Responsive design unchanged... */
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: linear-gradient(135deg, var(--dark-red), var(--red));
+    }
 
-        /* Animation unchanged... */
-    </style>
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      box-shadow: none;
+      color: #333;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(0, 0, 0, 0.04);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 2.25rem;
+      padding-top: 2rem;
+      padding-bottom: 2.75rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(227, 34, 42, 0.06);
+      border: 1px solid rgba(227, 34, 42, 0.3);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      color: var(--dark-red);
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw + 1.4rem, 3.1rem);
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-title span.highlight {
+      color: var(--red);
+    }
+
+    .hero-subtitle {
+      font-size: 1.02rem;
+      color: #444;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .stat-pill {
+      background: var(--black);
+      color: var(--white);
+      padding: 0.65rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      color: #555;
+      max-width: 420px;
+    }
+
+    .hero-right {
+      background: radial-gradient(circle at top left, #ffe8e8 0, #fef7f0 55%, #ffffff 100%);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem 1.6rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .holiday-accent {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.7) 0, transparent 50%),
+        radial-gradient(circle at 90% 90%, rgba(255, 0, 0, 0.06) 0, transparent 55%);
+    }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .goal-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+      color: #444;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+    }
+
+    .progress-fill {
+      width: 32%; /* Update this manually as you raise funds */
+      height: 100%;
+      background: linear-gradient(90deg, var(--red), var(--aqua));
+      border-radius: inherit;
+      transition: width 0.4s ease-out;
+    }
+
+    .goal-caption {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .impact-list {
+      list-style: none;
+      font-size: 0.9rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .impact-list li {
+      margin-bottom: 0.45rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .impact-bullet {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--red);
+      margin-top: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    .mini-guarantee {
+      font-size: 0.82rem;
+      color: #444;
+      padding: 0.6rem 0.9rem;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px dashed rgba(0, 0, 0, 0.1);
+    }
+
+    .mini-guarantee span {
+      font-weight: 700;
+      color: var(--dark-red);
+    }
+
+    /* IMPACT SECTION */
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.4rem;
+      margin-top: 1.4rem;
+    }
+
+    .card {
+      background: var(--cream);
+      border-radius: var(--radius-lg);
+      padding: 1.2rem 1.25rem 1.35rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.85), transparent 55%);
+      opacity: 0.9;
+    }
+
+    .card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-title {
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      font-size: 1rem;
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      color: var(--dark-red);
+      margin-bottom: 0.3rem;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: #444;
+    }
+
+    .holiday-strip {
+      margin-top: 1.75rem;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, #b0171e, #e03c3c, #d9a441);
+      color: var(--white);
+      padding: 1rem 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .holiday-strip strong {
+      font-weight: 700;
+    }
+
+    /* TIMELINE */
+
+    .timeline {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 2fr);
+      gap: 1.75rem;
+      align-items: flex-start;
+    }
+
+    .timeline ul {
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .timeline li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.4rem;
+      position: relative;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--aqua);
+    }
+
+    .timeline-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #666;
+      margin-bottom: 0.25rem;
+    }
+
+    /* FORM / DONATION */
+
+    .donation-section {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 2fr);
+      gap: 1.8rem;
+      align-items: start;
+    }
+
+    .donation-panel {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem 1.6rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .donation-panel h2 {
+      margin-bottom: 0.6rem;
+    }
+
+    .donation-panel p {
+      font-size: 0.92rem;
+      color: #444;
+      margin-bottom: 0.9rem;
+    }
+
+    form {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input,
+    select {
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.18);
+      padding: 0.55rem 0.9rem;
+      font-size: 0.9rem;
+      width: 100%;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--red);
+      box-shadow: 0 0 0 2px rgba(227, 34, 42, 0.1);
+    }
+
+    .helper {
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    .donation-quick {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .chip {
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.16);
+      font-size: 0.8rem;
+      cursor: pointer;
+      background: #fafafa;
+    }
+
+    .chip:hover {
+      border-color: var(--red);
+    }
+
+    .matching-card {
+      background: var(--cream);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+    }
+
+    .matching-card strong {
+      color: var(--dark-red);
+    }
+
+    .matching-example {
+      margin-top: 0.35rem;
+      font-size: 0.85rem;
+      color: #444;
+    }
+
+    .company-list {
+      margin-top: 0.25rem;
+      font-size: 0.8rem;
+      color: #555;
+    }
+
+    .mini-heading {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #666;
+      margin-bottom: 0.3rem;
+    }
+
+    /* FAQ / FOOTER */
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.3rem;
+      margin-top: 1.3rem;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+    }
+
+    .faq-item h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      background: #101010;
+      color: rgba(255, 255, 255, 0.9);
+      margin-top: 2.25rem;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 2.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-inner p {
+      font-size: 0.9rem;
+      max-width: 560px;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .footer-meta {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    @media (max-width: 840px) {
+      .hero,
+      .timeline,
+      .donation-section {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .nav-dates {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav {
+        padding-inline: 0.9rem;
+      }
+
+      .hero {
+        padding-top: 1.4rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <!-- LOGO replaces text -->
-                <a href="/" class="logo-link" title="liveLIVE Foundation Home">
-                    <img src="logo.png" alt="liveLIVE Foundation Logo" class="header-logo">
-                </a>
-                <div class="contact-info">
-                    Questions? <a href="mailto:inquiries@livelive.today">inquiries@livelive.today</a>
-                </div>
-            </div>
+<div class="page">
+
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="nav">
+      <div class="nav-left">
+        <img src="logo.png" alt="liveLIVE Foundation logo" class="nav-logo" />
+        <div>
+          <div class="nav-title">Giving Tuesday Campaign</div>
+          <div class="nav-sub">Meeting the immediate needs of single-parent families</div>
         </div>
-    </header>
+      </div>
+      <div class="nav-cta">
+        <div class="nav-dates">Nov 23 – Dec 2</div>
+        <a href="#donate" class="btn btn-primary">Donate Now</a>
+      </div>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero holiday-theme">
-        <div class="holiday-effects"></div>
-        <div class="container">
-            <div class="hero-content fade-in">
-                <div class="campaign-badge">Giving Tuesday 2025</div>
-                <h1>
-                    <span class="holiday-emoji">🎁</span>
-                    Give Hope This Holiday Season<br>
-                    For 100 Single-Parent Families
-                    <span class="holiday-emoji">🌟</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Spread joy and make an immediate, life-changing impact this Giving Tuesday!
-                </p>
-                <div class="campaign-dates">📅 November 23 - December 2, 2025</div>
-            </div>
+  <main>
+    <!-- HERO -->
+    <section class="section hero" aria-labelledby="hero-title">
+      <div>
+        <div class="hero-badge">
+          Holiday Giving · November 23 – Giving Tuesday, December 2
         </div>
-    </section>
-    <hr class="holiday-divider">
+        <h1 class="hero-title" id="hero-title">
+          Help <span class="highlight">stabilize 100 single-parent families</span> this holiday season.
+        </h1>
+        <p class="hero-subtitle">
+          From Sunday, November 23rd through Giving Tuesday, December 2nd, every dollar you give helps
+          keep families housed, fed, and hopeful. <strong>98% of your gift goes directly to families
+          within 72–96 hours.</strong>
+        </p>
 
-    <!-- Stats Section -->
-    <section class="container">
-        <div class="stats fade-in">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">$50,000</div>
-                    <div class="stat-label">Campaign Goal</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100</div>
-                    <div class="stat-label">Families Supported</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">$500</div>
-                    <div class="stat-label">Average Per Family</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">10</div>
-                    <div class="stat-label">Days to Make a Difference</div>
-                </div>
-            </div>
+        <div class="hero-stats">
+          <div class="stat-pill">$50,000 Goal</div>
+          <div class="stat-pill">Help 100 Families</div>
+          <div class="stat-pill">98% Direct Impact</div>
         </div>
-    </section>
-    <hr class="holiday-divider">
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <!-- Mission Section -->
-            <section class="section">
-                <h2>Why Single-Parent Families Need Your Help Now</h2>
-                <p class="section-subtitle">Single-parent families face unique challenges. Rising costs, limited support systems, and unexpected emergencies can push hardworking parents to the breakin[...]
-
-                <div class="story-box">
-                    <h3>🏠 Real Impact in 72-96 Hours</h3>
-                    <p>Unlike traditional charity programs that take weeks or months to process, liveLIVE Foundation delivers support within 72-96 hours of your donation. This means a struggling singl[...]
-                    <span class="emphasis">⚡ Your donation today = Direct help by the weekend</span>
-                </div>
-
-                <div class="impact-grid">
-                    <div class="impact-card">
-                        <div class="impact-icon">🍽️</div>
-                        <h3>Food Security</h3>
-                        <p>Help single parents put nutritious meals on the table for their children. No child should go to bed hungry when we have the power to help.</p>
-                    </div>
-                    <div class="impact-card">
-                        <div class="impact-icon">💡</div>
-                        <h3>Essential Utilities</h3>
-                        <p>Keep the lights on, heat running, and water flowing. Basic utilities are critical for family stability and children's wellbeing.</p>
-                    </div>
-                    <div class="impact-card">
-                        <div class="impact-icon">🏥</div>
-                        <h3>Medical Care</h3>
-                        <p>Cover urgent medical expenses, prescriptions, and healthcare needs that can't wait. Health emergencies don't pause for paychecks.</p>
-                    </div>
-                    <div class="impact-card">
-                        <div class="impact-icon">🏡</div>
-                        <h3>Housing Stability</h3>
-                        <p>Prevent evictions and homelessness by helping families stay in their homes. Stable housing is the foundation for everything else.</p>
-                    </div>
-                    <div class="impact-card">
-                        <div class="impact-icon">👔</div>
-                        <h3>Work Essentials</h3>
-                        <p>Support parents with transportation costs, work clothing, or childcare so they can maintain employment and provide for their families.</p>
-                    </div>
-                    <div class="impact-card">
-                        <div class="impact-icon">🎓</div>
-                        <h3>Educational Support</h3>
-                        <p>Provide school supplies, technology access, and educational resources to ensure children don't fall behind due to financial hardship.</p>
-                    </div>
-                </div>
-            </section>
-            <hr class="holiday-divider">
-
-            <!-- The Difference Section -->
-            <section class="section">
-                <h2>What Makes This Campaign Different</h2>
-                <p class="section-subtitle">We're not just another fundraiser. We're a direct, fast-response support system designed to help families in crisis before small problems become catastrophe[...]
-
-                <div class="impact-grid">
-                    <div class="impact-card">
-                        <div class="impact-icon">⚡</div>
-                        <h3>Lightning-Fast Response</h3>
-                        <p>72-96 hour turnaround from donation to direct family support. We cut through red tape to deliver help when it matters most.</p>
-                    </div>
-                    <div class="impact-card">
-                        <div class="impact-icon">🎯</div>
-                        <h3>Focused Impact</h3>
-                        <p>100% focused on single-parent families who are working hard but facing temporary financial crises that threaten their stability.</p>
-                    </div>
-                    <div class="impact-card">
-                        <div class="impact-icon">💯</div>
-                        <h3>Direct Support</h3>
-                        <p>Every dollar goes directly to helping families. No bureaucracy, no overhead waste—just real help for real people in real time.</p>
-                    </div>
-                </div>
-            </section>
-            <hr class="holiday-divider">
-
-            <!-- FAQ Section -->
-            <section class="section">
-                <h2>Frequently Asked Questions</h2>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <h3>How quickly will my donation help a family?</h3>
-                        <p>Your donation will be put to work within 72-96 hours. We have a streamlined process to identify families in need, verify their circumstances, and deliver immediate financial[...]
-                    </div>
-                    <div class="faq-item">
-                        <h3>Why focus specifically on single-parent families?</h3>
-                        <p>Single-parent households face disproportionate financial challenges. With only one income, no backup support at home, and the full weight of childcare and household responsi[...]
-                    </div>
-                    <div class="faq-item">
-                        <h3>How do you ensure the money goes to families who need it?</h3>
-                        <p>We have a careful vetting process that includes documentation review, direct communication with families, and verification of their circumstances. We work with local communi[...]
-                    </div>
-                    <div class="faq-item">
-                        <h3>Is my donation tax-deductible?</h3>
-                        <p>Yes! liveLIVE Foundation is a registered nonprofit organization. You will receive a donation receipt for tax purposes. Please consult with your tax advisor regarding deducti[...]
-                    </div>
-                    <div class="faq-item">
-                        <h3>Can I donate if I'm not in the United States?</h3>
-                        <p>Absolutely! We welcome support from donors worldwide. Our payment processor accepts international donations.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>What if you exceed the $50,000 goal?</h3>
-                        <p>If we're fortunate enough to exceed our goal, every additional dollar will be used to help more single-parent families beyond our initial target of 100. There's no shortage [...]
-                    </div>
-                </div>
-            </section>
+        <div class="hero-ctas">
+          <a href="#donate" class="btn btn-primary">Give Now</a>
+          <a href="#impact" class="btn btn-ghost">See How Your Gift Helps</a>
         </div>
-    </main>
-    <hr class="holiday-divider">
 
-    <!-- Donation CTA Section -->
-    <section class="donation-section">
-        <div class="container">
-            <h2>Make Your Impact Today</h2>
-            <p class="section-subtitle">Every donation counts. Whether you give $25, $50, $500, or more—you're changing lives and providing hope to families in crisis.</p>
-            
-            <button class="donate-btn" id="donateButton">Donate Now via Stripe</button>
-            
-            <div class="urgency-note">
-                <strong>⏰ Time is Running Out!</strong><br>
-                We have only 10 days to reach our goal and help 100 families. Your donation today could be the difference between a family losing their home or staying together through the holidays.
-            </div>
+        <p class="hero-note">
+          A missed paycheck, a flat tire, or a medical bill can be the difference between stability
+          and crisis for a single parent. Your gift bridges that gap when it matters most.
+        </p>
+      </div>
+
+      <aside class="hero-right" aria-label="Campaign progress and impact">
+        <div class="holiday-accent"></div>
+        <div class="hero-card-inner">
+          <h2 class="hero-card-title">Holiday Emergency Response Fund</h2>
+          <div class="goal-row">
+            <span>Campaign Progress</span>
+            <span><strong>$16,000</strong> raised of <strong>$50,000</strong></span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+          <p class="goal-caption">
+            Update this number as donations come in to show real-time momentum.
+          </p>
+
+          <ul class="impact-list">
+            <li>
+              <span class="impact-bullet"></span>
+              <span><strong>$50</strong> helps cover groceries for a week.</span>
+            </li>
+            <li>
+              <span class="impact-bullet"></span>
+              <span><strong>$150</strong> can keep the lights and heat on through a cold snap.</span>
+            </li>
+            <li>
+              <span class="impact-bullet"></span>
+              <span><strong>$500</strong> can prevent an eviction or keep a family in their home.</span>
+            </li>
+          </ul>
+
+          <div class="mini-guarantee">
+            <span>Impact Guarantee:</span> 98% of every dollar goes directly to families in crisis.
+            Funds are released within 72–96 hours to stabilize immediate needs such as food, housing,
+            utilities, and transportation.
+          </div>
         </div>
+      </aside>
     </section>
 
-    <!-- Footer ... (unchanged) -->
+    <!-- IMPACT SECTION -->
+    <section class="section" id="impact">
+      <h2>Where Your Holiday Gift Goes</h2>
+      <p>
+        liveLIVE Foundation focuses on fast, practical support for single-parent households
+        experiencing a temporary crisis. We work with trusted community partners to verify needs and
+        get assistance out quickly.
+      </p>
+
+      <div class="impact-grid" aria-label="Impact categories">
+        <article class="card">
+          <div class="card-inner">
+            <div class="card-tag">Immediate Need</div>
+            <h3 class="card-title">Groceries & Essentials</h3>
+            <p>
+              Emergency grocery cards, diapers, formula, and basic household essentials delivered
+              within days so no child goes to bed hungry while a parent is trying to catch up.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-inner">
+            <div class="card-tag">Stability</div>
+            <h3 class="card-title">Rent & Utility Support</h3>
+            <p>
+              Short-term assistance to prevent eviction, keep power and heat on, and avoid families
+              falling into long-term homelessness because of one unexpected expense.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-inner">
+            <div class="card-tag">Access</div>
+            <h3 class="card-title">Transportation & Childcare</h3>
+            <p>
+              Gas cards, ride support, and short-term childcare so single parents can get to work,
+              interviews, medical appointments, and school events.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-inner">
+            <div class="card-tag">Dignity</div>
+            <h3 class="card-title">Holiday Relief</h3>
+            <p>
+              For many families, “extras” like holiday meals or small gifts are impossible. Your gift
+              helps restore dignity and a sense of normalcy during a season that can feel
+              overwhelmingly heavy.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="holiday-strip">
+        <span>
+          <strong>Goal: $50,000</strong> to stabilize <strong>100 single-parent families</strong>
+          this season.
+        </span>
+        <a href="#donate" class="btn btn-primary">Help Reach the Goal</a>
+      </div>
+    </section>
+
+    <!-- TIMELINE / HOW IT WORKS -->
+    <section class="section">
+      <div class="timeline">
+        <div>
+          <h2>From Your Gift to Their Table in 72–96 Hours</h2>
+          <p>
+            We designed this campaign to move quickly. When a single parent raises their hand for
+            help, the response window matters. Here’s how your donation moves:
+          </p>
+        </div>
+        <div>
+          <div class="timeline-label">Campaign Window: Nov 23 – Dec 2</div>
+          <ul>
+            <li><strong>Day 0:</strong> You donate online through our secure Stripe-powered form.</li>
+            <li>
+              <strong>Within 24 hours:</strong> Our team vets urgent requests through partner
+              organizations and direct referrals.
+            </li>
+            <li>
+              <strong>Within 72–96 hours:</strong> Funds are distributed as digital payments or
+              direct-pay support (rent, utilities, groceries, transportation).
+            </li>
+            <li>
+              <strong>Within 2–3 weeks:</strong> You receive a brief impact summary showing how this
+              campaign moved the needle for local families.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- DONATION / FORM + MATCHING -->
+    <section class="section" id="donate">
+      <div class="donation-section">
+        <!-- LEFT: FORM / STRIPE / MAKE WEBHOOK -->
+        <div class="donation-panel" aria-label="Donation form">
+          <h2>Make Your Gift</h2>
+          <p>
+            Use the secure form below so we can thank you personally and share impact updates.
+            Payments are processed by Stripe; contact details are captured via Make.com for
+            immediate follow-up.
+          </p>
+
+          <!-- QUICK AMOUNTS (purely visual, can be wired up with JS later) -->
+          <div class="mini-heading">Suggested amounts</div>
+          <div class="donation-quick">
+            <button type="button" class="chip" onclick="setAmount(25)">$25</button>
+            <button type="button" class="chip" onclick="setAmount(50)">$50</button>
+            <button type="button" class="chip" onclick="setAmount(100)">$100</button>
+            <button type="button" class="chip" onclick="setAmount(250)">$250</button>
+            <button type="button" class="chip" onclick="setAmount(500)">$500</button>
+          </div>
+
+          <!-- MAKE.COM WEBHOOK FORM -->
+          <!-- Replace the action URL with your actual Make.com webhook URL -->
+          <form
+            id="donation-form"
+            action="https://hook.make.com/YOUR_WEBHOOK_ID_HERE"
+            method="POST"
+          >
+            <input type="hidden" name="source" value="GivingTuesdayLandingPage" />
+
+            <div>
+              <label for="name">Full Name</label>
+              <input id="name" name="name" type="text" required />
+            </div>
+
+            <div>
+              <label for="email">Email Address</label>
+              <input id="email" name="email" type="email" required />
+              <div class="helper">Used for your receipt and follow-up impact updates.</div>
+            </div>
+
+            <div>
+              <label for="amount">Donation Amount (USD)</label>
+              <input
+                id="amount"
+                name="amount"
+                type="number"
+                min="5"
+                step="1"
+                placeholder="50"
+                required
+              />
+              <div class="helper">Every dollar counts. 98% goes directly to families in need.</div>
+            </div>
+
+            <div>
+              <label for="frequency">Frequency</label>
+              <select id="frequency" name="frequency">
+                <option value="one-time">One-time gift</option>
+                <option value="monthly">Monthly (Founder’s Circle)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="company">Company (optional)</label>
+              <input
+                id="company"
+                name="company"
+                type="text"
+                placeholder="For company matching or corporate outreach"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="margin-top: 0.6rem; width: 100%; justify-content: center;"
+            >
+              Continue to Secure Payment
+            </button>
+
+            <p class="helper" style="margin-top: 0.5rem;">
+              After you submit this form, you’ll be redirected to our secure Stripe donation page to
+              complete your payment.
+            </p>
+          </form>
+
+          <!-- STRIPE WORKFLOW NOTE -->
+          <!--
+            HOW TO WIRE THIS UP:
+
+            1. In Stripe, create a Payment Link or Checkout Session for your Giving Tuesday campaign.
+               Example: https://buy.stripe.com/your-link
+
+            2. In your Make.com scenario:
+               - Trigger: Custom Webhook (same URL as the form action).
+               - Steps:
+                    • Store name, email, amount, frequency, company.
+                    • Send a transactional "Thank you" email.
+                    • Redirect the user to the Stripe Payment Link (e.g., via HTTP 302 response or
+                      using a Make-hosted landing page).
+
+            3. Optionally, log donations to a Google Sheet, Airtable, or your CRM.
+          -->
+        </div>
+
+        <!-- RIGHT: COMPANY MATCHING + HOLIDAY CTA -->
+        <div>
+          <div class="matching-card">
+            <h2>Double Your Impact with Company Matching</h2>
+            <p>
+              Many employers offer matching gifts for charitable donations. That means your
+              generosity can go twice as far for single-parent families.
+            </p>
+            <p class="matching-example">
+              <strong>Example:</strong> If your employer matches 1:1, your <strong>$25</strong>
+              becomes <strong>$50</strong>, and your <strong>$100</strong> becomes
+              <strong>$200</strong>—instantly doubling your impact this season.
+            </p>
+            <p class="company-list">
+              After giving, check with your HR or benefits team about “matching gifts” or “workplace
+              giving.” If they participate, forward your receipt and designate
+              <strong>liveLIVE Foundation</strong> as the beneficiary.
+            </p>
+          </div>
+
+          <div style="margin-top: 1.3rem;">
+            <h2>Holiday Giving, Real-Time Impact</h2>
+            <p style="font-size: 0.95rem; color: #444;">
+              This isn’t a distant impact someday. This is <strong>rent due on Friday</strong>,
+              <strong>an empty pantry on Sunday</strong>, and a parent praying for a way to say
+              “yes” to their child’s basic needs.
+            </p>
+            <p style="font-size: 0.95rem; color: #444; margin-top: 0.4rem;">
+              Your gift between <strong>November 23rd and Giving Tuesday, December 2nd</strong>
+              ensures families in crisis don’t have to face this season alone.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ / TRUST -->
+    <section class="section">
+      <h2>Questions You Might Be Asking</h2>
+      <div class="faq-grid">
+        <article class="faq-item">
+          <h3>How do you choose which families receive support?</h3>
+          <p>
+            We work with community partners, case managers, and direct referrals to identify
+            single-parent households with an immediate, verifiable need. We prioritize situations
+            where a short-term boost can prevent long-term crisis.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>What does “98% goes directly to families” mean?</h3>
+          <p>
+            For this campaign, 98% of all donations are reserved strictly for direct assistance such
+            as rent, utilities, food, transportation, and emergency needs. Only 2% is allocated to
+            essential processing and administrative costs.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>Is my donation tax-deductible?</h3>
+          <p>
+            liveLIVE Foundation is a registered 501(c)(3) nonprofit organization. All contributions
+            are tax-deductible to the extent allowed by law. You will receive a receipt for your
+            records via email.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER WITH DONATE CTA -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <a href="#top">
+          <img src="logo.png" alt="liveLIVE Foundation logo" style="width: 90px; margin-bottom: 0.5rem;" />
+        </a>
+      </div>
+      <p>
+        This holiday season, your generosity can be the difference between a family losing hope and
+        a family finding stability. Together, we can reach our <strong>$50,000 goal</strong> and
+        support <strong>100 single-parent families</strong> across our community.
+      </p>
+      <a href="#donate" class="btn btn-primary">Donate Now</a>
+      <div class="footer-meta">
+        liveLIVE Foundation · 501(c)(3) nonprofit organization · All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Quick amount chips
+  function setAmount(value) {
+    const amountInput = document.getElementById("amount");
+    if (amountInput) {
+      amountInput.value = value;
+      amountInput.focus();
+    }
+  }
+</script>
 </body>
 </html>
-          
-      
