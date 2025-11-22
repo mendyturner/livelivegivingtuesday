@@ -612,28 +612,17 @@
 
     <!-- Stripe Integration Script -->
     <script>
-        // Stripe payment integration
-        // Note: Replace 'YOUR_STRIPE_PUBLISHABLE_KEY' with your actual Stripe publishable key
-        // and 'YOUR_PAYMENT_LINK_OR_CHECKOUT_URL' with your Stripe payment link or checkout session URL
-        
+        // Stripe payment integration - Configure before deployment
         document.getElementById('donateButton').addEventListener('click', function() {
-            // Option 1: If you have a Stripe Payment Link, redirect to it
-            // window.location.href = 'YOUR_STRIPE_PAYMENT_LINK';
-            
-            // Option 2: If you're using Stripe Checkout, initialize it here
-            // You would need to include Stripe.js in the head section:
-            // <script src="https://js.stripe.com/v3/"></script>
-            
-            // For now, this is a placeholder that shows an alert
-            // Replace this with your actual Stripe integration
-            alert('Stripe payment integration:\n\nTo complete the setup:\n1. Create a Stripe account at stripe.com\n2. Create a Payment Link or Checkout Session\n3. Replace this alert with either:\n   - A redirect to your Stripe Payment Link, or\n   - Initialize Stripe Checkout with your publishable key\n\nFor testing, you can use this placeholder to redirect to Stripe:\nwindow.location.href = "YOUR_STRIPE_PAYMENT_LINK";');
-            
-            // Example of redirecting to a Stripe Payment Link (uncomment and add your link):
+            // TODO: Replace this placeholder with your actual Stripe integration
+            // Option 1: Redirect to Stripe Payment Link (recommended for simplicity)
+            // Uncomment and add your Stripe Payment Link:
             // window.location.href = 'https://buy.stripe.com/your-payment-link';
             
-            // Example of using Stripe Checkout (requires Stripe.js):
+            // Option 2: Use Stripe Checkout (requires adding Stripe.js to the head section)
+            // Uncomment and configure with your Stripe keys:
             /*
-            var stripe = Stripe('YOUR_PUBLISHABLE_KEY');
+            const stripe = Stripe('YOUR_PUBLISHABLE_KEY');
             stripe.redirectToCheckout({
                 lineItems: [{price: 'YOUR_PRICE_ID', quantity: 1}],
                 mode: 'payment',
@@ -645,6 +634,9 @@
                 }
             });
             */
+            
+            // Placeholder message for development/testing
+            alert('Payment system is being configured. Please contact inquiries@livelive.today to make a donation.');
         });
 
         // Smooth scrolling for any anchor links (if you add navigation)
