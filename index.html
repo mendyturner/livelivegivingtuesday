@@ -841,67 +841,15 @@
           <!-- Replace the action URL with your actual Make.com webhook URL -->
           <form
             id="donation-form"
-            action="n8irk47r1sr3n1bmjvxaqj6aast1edzn@hook.us2.make.com"
+            action="https://hook.us2.make.com/n8irk47r1sr3n1bmjvxaqj6aast1edzn"
             method="POST"
-          >
-            <input type="hidden" name="source" value="GivingTuesdayLandingPage" />
-
-            <div>
-              <label for="name">Full Name</label>
-              <input id="name" name="name" type="text" required />
-            </div>
-
-            <div>
-              <label for="email">Email Address</label>
-              <input id="email" name="email" type="email" required />
-              <div class="helper">Used for your receipt and follow-up impact updates.</div>
-            </div>
-
-            <div>
-              <label for="amount">Donation Amount (USD)</label>
-              <input
-                id="amount"
-                name="amount"
-                type="number"
-                min="5"
-                step="1"
-                placeholder="50"
-                required
-              />
-              <div class="helper">Every dollar counts. 98% goes directly to families in need.</div>
-            </div>
-
-            <div>
-              <label for="frequency">Frequency</label>
-              <select id="frequency" name="frequency">
-                <option value="one-time">One-time gift</option>
-                <option value="monthly">Monthly (Founder’s Circle)</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="company">Company (optional)</label>
-              <input
-                id="company"
-                name="company"
-                type="text"
-                placeholder="For company matching or corporate outreach"
-              />
-            </div>
-
-            <button
-              type="submit"
-              class="btn btn-primary"
-              style="margin-top: 0.6rem; width: 100%; justify-content: center;"
             >
-              Continue to Secure Payment
-            </button>
-
-            <p class="helper" style="margin-top: 0.5rem;">
-              After you submit this form, you’ll be redirected to our secure Stripe donation page to
-              complete your payment.
-            </p>
+          <input type="hidden" name="source" value="GivingTuesdayLandingPage" />
+          ...
           </form>
+           
+
+           
 
           <!-- STRIPE WORKFLOW NOTE -->
           <!--
