@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Help liveLIVE Foundation meet the immediate needs of single-parent families between November 23 and Giving Tuesday, December 2. 98% of every gift goes directly to families within 72–[...]
+    content="Help liveLIVE Foundation meet the immediate needs of single-parent families between November 23 and Giving Tuesday, December 2. 98% of every gift goes directly to families within 72–96 hours."
   />
 
   <style>
@@ -642,9 +642,7 @@
       </div>
       <div class="nav-cta">
         <div class="nav-dates">Nov 23 – Dec 2</div>
-        <a href="https://buy.stripe.com/test_eVq00l0i1awi67AaJY4sE01" class="btn btn-primary">
-  Donate Now
-</a>
+        <a href="https://buy.stripe.com/test_14A6oJ4yh7k6dA22ds4sE02" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Donate Now</a>
       </div>
     </div>
   </header>
@@ -672,7 +670,7 @@
         </div>
 
         <div class="hero-ctas">
-          <a href="#donate" class="btn btn-primary">Give Now</a>
+          <a href="https://buy.stripe.com/test_14A6oJ4yh7k6dA22ds4sE02" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Give Now</a>
           <a href="#impact" class="btn btn-ghost">See How Your Gift Helps</a>
         </div>
 
@@ -688,7 +686,7 @@
           <h2 class="hero-card-title">Holiday Emergency Response Fund</h2>
           <div class="goal-row">
             <span>Campaign Progress</span>
-            <span><strong>$2,050</strong> raised of <strong>$50,000</strong></span>
+            <span><strong>$16,000</strong> raised of <strong>$50,000</strong></span>
           </div>
           <div class="progress-bar">
             <div class="progress-fill"></div>
@@ -782,7 +780,7 @@
           <strong>Goal: $50,000</strong> to stabilize <strong>100 single-parent families</strong>
           this season.
         </span>
-        <a href="#donate" class="btn btn-primary">Help Reach the Goal</a>
+        <a href="https://buy.stripe.com/test_14A6oJ4yh7k6dA22ds4sE02" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Help Reach the Goal</a>
       </div>
     </section>
 
@@ -817,115 +815,41 @@
       </div>
     </section>
 
-    <!-- DONATION / FORM + MATCHING -->
+    <!-- DONATION / MATCHING -->
     <section class="section" id="donate">
       <div class="donation-section">
-        <!-- LEFT: FORM / STRIPE / MAKE WEBHOOK -->
-        <div class="donation-panel" aria-label="Donation form">
+        <!-- LEFT: STRIPE CTA -->
+        <div class="donation-panel" aria-label="Donation">
           <h2>Make Your Gift</h2>
           <p>
-            Use the secure form below so we can thank you personally and share impact updates.
-            Payments are processed by Stripe; contact details are captured via Make.com for
-            immediate follow-up.
+            Choose an amount that feels meaningful to you, then click below to give through our
+            secure Stripe donation page. Your gift is processed safely, and you’ll receive an email
+            receipt for your records.
           </p>
 
-          <!-- QUICK AMOUNTS (purely visual, can be wired up with JS later) -->
           <div class="mini-heading">Suggested amounts</div>
           <div class="donation-quick">
-            <button type="button" class="chip" onclick="setAmount(25)">$25</button>
-            <button type="button" class="chip" onclick="setAmount(50)">$50</button>
-            <button type="button" class="chip" onclick="setAmount(100)">$100</button>
-            <button type="button" class="chip" onclick="setAmount(250)">$250</button>
-            <button type="button" class="chip" onclick="setAmount(500)">$500</button>
+            <button type="button" class="chip">$25</button>
+            <button type="button" class="chip">$50</button>
+            <button type="button" class="chip">$100</button>
+            <button type="button" class="chip">$250</button>
+            <button type="button" class="chip">$500</button>
           </div>
 
-          <!-- MAKE.COM WEBHOOK FORM -->
-          <!-- Replace the action URL with your actual Make.com webhook URL -->
-          <form
-            id="donation-form"
-            method="POST"
+          <a
+            href="https://buy.stripe.com/test_14A6oJ4yh7k6dA22ds4sE02"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+            style="margin-top: 0.8rem; width: 100%; justify-content: center;"
           >
-            <input type="hidden" name="source" value="GivingTuesdayLandingPage" />
+            Give Securely with Stripe
+          </a>
 
-            <div>
-              <label for="name">Full Name</label>
-              <input id="name" name="name" type="text" required />
-            </div>
-
-            <div>
-              <label for="email">Email Address</label>
-              <input id="email" name="email" type="email" required />
-              <div class="helper">Used for your receipt and follow-up impact updates.</div>
-            </div>
-
-            <div>
-              <label for="amount">Donation Amount (USD)</label>
-              <input
-                id="amount"
-                name="amount"
-                type="number"
-                min="5"
-                step="1"
-                placeholder="50"
-                required
-              />
-              <div class="helper">Every dollar counts. 98% goes directly to families in need.</div>
-            </div>
-
-            <div>
-              <label for="frequency">Frequency</label>
-              <select id="frequency" name="frequency">
-                <option value="one-time">One-time gift</option>
-                <option value="monthly">Monthly (Founder’s Circle)</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="company">Company (optional)</label>
-              <input
-                id="company"
-                name="company"
-                type="text"
-                placeholder="For company matching or corporate outreach"
-              />
-            </div>
-
-            <!-- Replaced the malformed submit button with a plain anchor styled as a button
-                 so clicking it performs a straightforward redirect to the Stripe Payment Link. -->
-            <a
-              href="https://buy.stripe.com/test_eVq00l0i1awi67AaJY4sE01"
-              class="btn btn-primary"
-              style="display: inline-flex; margin-top: 0.6rem; width: 100%; justify-content: center;"
-            >
-              Continue to Secure Payment
-            </a>
-
-            <p class="helper" style="margin-top: 0.5rem;">
-              After you submit this form, you’ll be redirected to our secure Stripe donation page to
-              complete your payment.
-            </p>
-          </form>
-
-
-           
-
-          <!-- STRIPE WORKFLOW NOTE -->
-          <!--
-            HOW TO WIRE THIS UP:
-
-            1. In Stripe, create a Payment Link or Checkout Session for your Giving Tuesday campaign.
-               Example: https://buy.stripe.com/your-link
-
-            2. In your Make.com scenario:
-               - Trigger: Custom Webhook (same URL as the form action).
-               - Steps:
-                    • Store name, email, amount, frequency, company.
-                    • Send a transactional "Thank you" email.
-                    • Redirect the user to the Stripe Payment Link (e.g., via HTTP 302 response or
-                      using a Make-hosted landing page).
-
-            3. Optionally, log donations to a Google Sheet, Airtable, or your CRM.
-          -->
+          <p class="helper" style="margin-top: 0.5rem;">
+            98% of your donation goes directly to families for food, housing, utilities, and
+            transportation. Thank you for standing in the gap for single-parent households.
+          </p>
         </div>
 
         <!-- RIGHT: COMPANY MATCHING + HOLIDAY CTA -->
@@ -998,48 +922,39 @@
 
   <!-- FOOTER WITH DONATE CTA -->
   <footer>
-  <div class="footer-inner">
-    <div>
-      <a href="#top">
-        <img src="logo.png" alt="liveLIVE Foundation logo" style="width: 90px; margin-bottom: 0.5rem;" />
+    <div class="footer-inner">
+      <div>
+        <a href="#top">
+          <img src="logo.png" alt="liveLIVE Foundation logo" style="width: 90px; margin-bottom: 0.5rem;" />
+        </a>
+      </div>
+      <p>
+        This holiday season, your generosity can be the difference between a family losing hope and
+        a family finding stability. Together, we can reach our <strong>$50,000 goal</strong> and
+        support <strong>100 single-parent families</strong> across our community.
+      </p>
+      <a
+        href="https://buy.stripe.com/test_14A6oJ4yh7k6dA22ds4sE02"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Donate Now
       </a>
+      <div class="footer-meta">
+        liveLIVE Foundation · 501(c)(3) nonprofit organization · All rights reserved.
+      </div>
     </div>
-
-    <p>
-      This holiday season, your generosity can be the difference between a family losing hope 
-      and a family finding stability. Together, we can reach our 
-      <strong>$50,000 goal</strong> and support <strong>100 single-parent families</strong> 
-      across our community.
-    </p>
-
-    <a href="https://buy.stripe.com/test_eVq00l0i1awi67AaJY4sE01" class="btn btn-primary">
-  Donate Now
-</a>
-
-
-    <p style="margin-top: 1rem; font-size: 0.85rem; color: rgba(255,255,255,0.85);">
-      <strong>For Corporate Sponsorship opportunities, contact: 
-      <a href="mailto:jeff@livelive.today" style="color: #fff; text-decoration: underline;">
-        jeff@livelive.today
-      </a></strong>
-    </p>
-
-    <div class="footer-meta">
-      liveLIVE Foundation · 501(c)(3) nonprofit organization · All rights reserved.
-    </div>
-  </div>
-</footer>
+  </footer>
 
 </div>
 
 <script>
-  // Quick amount chips
+  // Quick amount chips currently just show suggested levels visually.
+  // If you later use a dynamic Stripe amount link, you can wire these up.
   function setAmount(value) {
-    const amountInput = document.getElementById("amount");
-    if (amountInput) {
-      amountInput.value = value;
-      amountInput.focus();
-    }
+    // No-op for now
+    return value;
   }
 </script>
 </body>
